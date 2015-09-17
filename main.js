@@ -4,7 +4,7 @@ function binEncode(hex) {
 		var temp = "0x" + hex[i];
 		temp = parseInt(temp);
 		temp = temp.toString(2);
-		if(hex[i]<8){temp = "0" + temp;}
+		if(hex[i] < 8){temp = "0" + temp;}
 		if(hex[i] < 4){temp = "0" + temp;}
 		if(hex[i] < 2){temp = "0" + temp;}
 		str += temp;
@@ -47,7 +47,7 @@ function collision (bits) {
 
 function preImage(bits) {
 	var valS = Math.random().toString(36).substring(7);
-	var tempS = hashFun(val, bits);
+	var tempS = hashFun(valS, bits);
 	var totalAvg = 0;
 
 	for (var i = 0; i < 100; i++) {
