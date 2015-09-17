@@ -32,7 +32,7 @@ function collision (bits) {
 			var val = Math.random().toString(36).substring(7);
 			var temp = hashFun(val, bits);
 			tryObj['numTries']++;
-			if(temp in tryObj){
+			if(temp in tryObj && val != tryObj[temp]){
 				console.log(i, "Attempts: ", tryObj['numTries'], "Hash: ", temp);
 				break;
 			}else{
@@ -56,7 +56,7 @@ function preImage(bits) {
 			var val = Math.random().toString(36).substring(7);
 			var temp = hashFun(val, bits);
 			numTries++;
-			if(temp === tempS && val.length > 0){
+			if(temp === tempS && val.length > 0 && val != valS){
 				console.log(temp, val);
 				console.log(tempS, valS);
 				console.log(i, "Attempts: ", numTries, "Values: ", valS, val, "Hash: ", temp, tempS);
